@@ -1,0 +1,96 @@
+.loginShell{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.65)),
+    url("/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.loginCard{
+  width: min(500px, 92vw);
+  padding: 34px 30px 26px;
+  border-radius: 20px;
+
+  background: rgba(15, 18, 20, 0.82);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.55);
+}
+
+.cardHead{
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.cardLogo{
+  height: 48px;   /* 🔥 أصغر */
+  width: auto;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+h2{
+  margin: 0;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.field{
+  margin-top: 16px;
+}
+
+label{
+  display:block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: rgba(200, 235, 205, 0.9);
+}
+
+input{
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+
+  background: rgba(236, 247, 238, 0.96);
+  font-size: 14px;
+}
+
+input:focus{
+  box-shadow: 0 0 0 3px rgba(133,187,120,.35);
+}
+
+.btn{
+  width: 100%;
+  height: 48px;
+  margin-top: 22px;
+
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  background: #5f8f55;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.btn:disabled{
+  opacity: .75;
+}
+
+.err{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #ffb4b4;
+}

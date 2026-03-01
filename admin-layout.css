@@ -1,0 +1,164 @@
+.adminShell{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  background:#eef3f1;
+  color:#0f172a;
+}
+
+/* Sidebar */
+.sidebar{
+  background: rgba(255, 255, 255, 0.9);
+  border-right:1px solid rgba(15,23,42,.08);
+  padding:18px 14px;
+}
+
+/* لو عندك صورة لوقو داخل السايدبار */
+.logoImg{
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid rgba(14, 140, 83, .20);
+  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+}
+
+.sidebarLogo{
+  width:44px;
+  height:44px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+
+.logoText{
+  min-width:0;
+  line-height:1.1;
+}
+
+.logoTitle{
+  font-weight:900;
+  font-size:14px;
+  color:#0f172a;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.logoSub{
+  margin-top:4px;
+  font-size:12px;
+  color:#64748b;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* Nav */
+.nav{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:6px;
+}
+
+.nav a{
+  text-decoration:none;
+  padding:10px 12px;
+  border-radius:12px;
+  color:#0f172a;
+  border:1px solid transparent;
+}
+
+.nav a:hover{
+  background: rgba(37,99,235,.06);
+  border-color: rgba(37,99,235,.10);
+}
+
+.nav a.active{
+  background: rgba(14,165,164,.10);
+  border-color: rgba(14,165,164,.18);
+}
+
+/* Content */
+.content{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+
+.topbar{
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  background: rgba(255,255,255,.95);
+  border-bottom:1px solid rgba(15,23,42,.08);
+}
+
+.topTitle{
+  font-weight:900;
+}
+
+.logout{
+  border:1px solid rgba(239,68,68,.28);
+  background: rgba(239,68,68,.08);
+  color:#b91c1c;
+  padding:8px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.logout:hover{
+  background: rgba(239,68,68,.12);
+}
+
+.page{
+  padding:18px;
+}/* ===== Brand / Logo visibility fix ===== */
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding: 14px 14px 10px;
+}
+
+.logoBadge{
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(14, 140, 83, .18);
+  box-shadow: 0 14px 30px rgba(0,0,0,.10);
+  display:grid;
+  place-items:center;
+}
+
+.logoImg{
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display:block;
+}
+
+/* اختياري: إذا اللوقو لونه فاتح جداً وتحتاجينه أغمق شوي */
+.logoImg{
+  filter: contrast(1.08) saturate(1.05);
+}
+
+.brandTitle{
+  font-weight: 850;
+  color: #0a2d1f;
+  font-size: 15px;
+  line-height: 1.1;
+}
+
+.brandSub{
+  margin-top: 3px;
+  font-size: 12px;
+  color: #6d7b75;
+}

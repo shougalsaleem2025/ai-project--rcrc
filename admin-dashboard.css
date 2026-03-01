@@ -1,0 +1,236 @@
+/* ===== PAGE ===== */
+
+.page{
+  padding: 28px 32px;
+  background: #f4f7f6;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+
+h2{
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0a2d1f;
+}
+
+p{
+  margin: 6px 0 25px;
+  color: #5f6f68;
+  font-size: 14px;
+}
+
+/* ===== TOP STATS ===== */
+
+.topRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom: 28px;
+}
+
+.stats{
+  display:flex;
+  gap:18px;
+}
+
+.statCard{
+  width:120px;
+  padding:18px;
+  border-radius:18px;
+  background:#ffffff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+  transition:.2s ease;
+}
+
+.statCard:hover{
+  transform: translateY(-4px);
+}
+
+.statNum{
+  font-size:22px;
+  font-weight:800;
+  color:#0e8c53;
+}
+
+.statLabel{
+  font-size:13px;
+  margin-top:4px;
+  color:#6d7b75;
+}
+
+/* ===== MAIN CARD ===== */
+
+.card{
+  background:#ffffff;
+  border-radius:20px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.06);
+  overflow:hidden;
+}
+
+/* ===== SEARCH ROW ===== */
+
+.cardHead{
+  padding:22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #f0f0f0;
+}
+
+.search{
+  width:280px;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid #e3e6e5;
+  background:#fafcfc;
+  font-size:14px;
+  transition:.2s ease;
+}
+
+.search:focus{
+  outline:none;
+  border-color:#0e8c53;
+  box-shadow:0 0 0 3px rgba(14,140,83,0.15);
+}
+
+.quickBtns button{
+  margin-left:10px;
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid #dce5e2;
+  background:#f6faf8;
+  color:#0e8c53;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.quickBtns button:hover{
+  background:#eaf7f0;
+}
+
+/* ===== ADD ROW ===== */
+
+.addRow{
+  padding:20px 22px;
+  display:flex;
+  gap:12px;
+  border-bottom:1px solid #f0f0f0;
+}
+
+.addRow input{
+  flex:1;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid #e3e6e5;
+  font-size:14px;
+  background:#fafcfc;
+}
+
+.addRow input:focus{
+  outline:none;
+  border-color:#0e8c53;
+  box-shadow:0 0 0 3px rgba(14,140,83,0.15);
+}
+
+.addBtn{
+  padding:12px 18px;
+  border-radius:14px;
+  border:none;
+  background:linear-gradient(135deg,#0e8c53,#0a6b3b);
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 12px 30px rgba(14,140,83,0.25);
+  transition:.2s ease;
+}
+
+.addBtn:hover{
+  transform:translateY(-2px);
+}
+
+/* ===== TABLE ===== */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  text-align:left;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  color:#8a9791;
+  padding:16px 22px;
+  background:#fafcfc;
+}
+
+td{
+  padding:18px 22px;
+  border-top:1px solid #f2f2f2;
+  font-size:14px;
+  color:#1d2b26;
+}
+
+tr{
+  transition:.2s ease;
+}
+
+tbody tr:hover{
+  background:#f8fbfa;
+}
+
+/* ===== STATUS BADGE ===== */
+
+.pill{
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  background:#eaf7f0;
+  color:#0e8c53;
+}
+
+.pill.off{
+  background:#fff1f1;
+  color:#b02323;
+}
+
+/* ===== ACTION BUTTONS ===== */
+
+.actions button{
+  margin-right:8px;
+  padding:8px 12px;
+  border-radius:10px;
+  border:1px solid #e2e6e5;
+  background:#ffffff;
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.actions button:hover{
+  background:#f4f7f6;
+}
+
+.actions .warn{
+  border-color:#f2dede;
+  color:#b02323;
+}
+
+.actions .danger{
+  border-color:#f2dede;
+  color:#b02323;
+}
+
+/* ===== EMPTY ===== */
+
+.empty{
+  text-align:center;
+  padding:40px;
+  color:#9aa5a0;
+}

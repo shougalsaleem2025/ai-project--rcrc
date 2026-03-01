@@ -1,0 +1,108 @@
+<div class="page">
+  <div class="topRow">
+    <div>
+      <h2>Sources</h2>
+      <p>Manage RSS/News sources used to generate the newsletter</p>
+    </div>
+
+    <div class="stats">
+      <div class="statCard">
+        <div class="statNum">{{ total }}</div>
+        <div class="statLabel">Total</div>
+      </div>
+
+      <div class="statCard">
+        <div class="statNum">{{ enabledCount }}</div>
+        <div class="statLabel">Enabled</div>
+      </div>
+
+      <div class="statCard">
+        <div class="statNum">{{ disabledCount }}</div>
+        <div class="statLabel">Disabled</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cardHead">
+      <input
+        class="search"
+        [(ngModel)]="q"
+        type="text"
+        placeholder="Search source..."
+      />
+
+      <div class="quickBtns">
+        <button type="button" (click)="setAllEnabled(true)">Enable all</button>
+        <button type="button" (click)="setAllEnabled(false)">Disable all</button>
+      </div>
+    </div>
+
+    <div class="addRow">
+      <input [(ngModel)]="name" type="text" placeholder="Source name (e.g., Google AI Blog)" />
+      <input [(ngModel)]="url" type="url" placeholder="RSS URL (https://...)" />
+      <select [(ngModel)]="category">
+        <option>Tech</option>
+        <option>AI</option>
+        <option>Cloud</option>
+        <option>Cybersecurity</option>
+        <option>Data</option>
+        <option>Business</option>
+      </select>
+
+      <label class="toggle">
+        <input type="checkbox" [(ngModel)]="enabled" />
+        <span>Enabled</span>
+      </label>
+
+      <button class="addBtn" type="button" (click)="add()">Add Source</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Source</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Created</th>
+          <th class="actionsHead">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let s of filtered; trackBy: trackById">
+          <td class="sourceCell">
+            <div class="name">{{ s.name }}</div>
+            <div class="url">{{ s.url }}</div>
+          </td>
+
+          <td>
+            <span class="tag">{{ s.category }}</span>
+          </td>
+
+          <td>
+            <span class="pill" [class.off]="!s.enabled">
+              {{ s.enabled ? 'Enabled' : 'Disabled' }}
+            </span>
+          </td>
+
+          <td>{{ s.createdAt | date: 'yyyy-MM-dd' }}</td>
+
+          <td class="actions">
+            <button type="button" (click)="toggle(s)" [class.warn]="s.enabled">
+              {{ s.enabled ? 'Disable' : 'Enable' }}
+            </button>
+
+            <button type="button" class="danger" (click)="remove(s)">
+              Delete
+            </button>
+          </td>
+        </tr>
+
+        <tr *ngIf="filtered.length === 0">
+          <td colspan="5" class="empty">No sources found</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

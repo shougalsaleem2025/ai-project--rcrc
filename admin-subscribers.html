@@ -1,0 +1,93 @@
+<div class="page">
+  <div class="topRow">
+    <div>
+      <h2>Subscribers</h2>
+      <p>Manage newsletter subscribers (add, remove, and toggle subscription)</p>
+    </div>
+
+    <div class="stats">
+      <div class="statCard">
+        <div class="statNum">{{ total }}</div>
+        <div class="statLabel">Total</div>
+      </div>
+
+      <div class="statCard">
+        <div class="statNum">{{ activeCount }}</div>
+        <div class="statLabel">Active</div>
+      </div>
+
+      <div class="statCard">
+        <div class="statNum">{{ unsubCount }}</div>
+        <div class="statLabel">Unsubscribed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="cardHead">
+      <input
+        class="search"
+        [(ngModel)]="q"
+        type="text"
+        placeholder="Search email..."
+      />
+
+      <div class="quickBtns">
+        <button type="button" (click)="setAll('Active')">Activate all</button>
+        <button type="button" (click)="setAll('Unsubscribed')">Unsubscribe all</button>
+      </div>
+    </div>
+
+    <div class="addRow">
+      <input
+        [(ngModel)]="newEmail"
+        type="email"
+        placeholder="employee@rcrc.gov.sa"
+        (keyup.enter)="add()"
+      />
+      <button class="addBtn" type="button" (click)="add()">Add subscriber</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Created</th>
+          <th class="actionsHead">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let s of filtered; trackBy: trackById">
+          <td class="emailCell">
+            <div class="email">{{ s.email }}</div>
+            <div class="sub">RCRC employee</div>
+          </td>
+
+          <td>
+            <span class="pill" [class.off]="s.status === 'Unsubscribed'">
+              {{ s.status }}
+            </span>
+          </td>
+
+          <td>{{ s.createdAt | date: 'yyyy-MM-dd' }}</td>
+
+          <td class="actions">
+            <button type="button" (click)="toggle(s)" [class.warn]="s.status === 'Active'">
+              {{ s.status === 'Active' ? 'Unsubscribe' : 'Activate' }}
+            </button>
+
+            <button type="button" class="danger" (click)="remove(s)">
+              Delete
+            </button>
+          </td>
+        </tr>
+
+        <tr *ngIf="filtered.length === 0">
+          <td colspan="4" class="empty">No subscribers found</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

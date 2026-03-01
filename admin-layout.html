@@ -1,0 +1,30 @@
+<div class="adminShell">
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="/rcrc.png" class="sidebarLogo" alt="RCRC" />
+      <div class="logoText">
+        <div class="logoTitle">Tech Newsletter</div>
+        <div class="logoSub">RCRC • Admin</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Dashboard</a>
+      <a routerLink="/sources" routerLinkActive="active">Sources</a>
+      <a routerLink="/subscribers" routerLinkActive="active">Subscribers</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="topbar">
+      <div class="topTitle">Admin Panel</div>
+
+      <!-- ✅ هذا هو المهم -->
+      <button class="logout" type="button" (click)="logout()">Logout</button>
+    </header>
+
+    <section class="page">
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>
